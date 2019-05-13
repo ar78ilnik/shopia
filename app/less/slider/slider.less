@@ -1,6 +1,54 @@
 .slider {
     width: 100%;
     height: 695px;
+    position: relative;
+
     /*background: radial-gradient(at top, #fff, #fff 10%, #7b7671 10%, #7b7671);*/
-    background-image: repeating-linear-gradient(315deg, #7b7671 0%, #7b7671 50%, transparent 50%, transparent 100%), repeating-linear-gradient(45deg, #7b7671 0%, #7b7671 50%, transparent 50%, transparent 100%);
+    /*background-image:
+        repeating-linear-gradient(335deg, #7b7671 0%, #7b7671 70%, transparent 70%, transparent 100%),
+        repeating-linear-gradient(25deg, #7b7671 0%, #7b7671 70%, transparent 70%, transparent 100%);*/
+    &__slide {
+        width: inherit;
+        height: inherit;
+        background-image: url("../img/slideback.jpg");
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__slide:nth-child(1) {
+        background-image: url("../img/slideback2.jpg");
+    }
+
+    &__slide:nth-child(2) {
+        background-image: url("../img/slideback3.jpg");
+    }
+
+    &__slide:nth-child(3) {
+        background-image: url("../img/slideback4.jpg");
+    }
+
+    &__dots {
+        width: 106px;
+        height: 26px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+    }
+
+    &__dots-item {
+        width: 19px;
+        height: 19px;
+        background-color: #b2b2b2;
+        transform: rotate(45deg);
+        transition: background-color 0.5s ease;
+        cursor: pointer;
+    }
+
+    &__dots-item:hover {
+        background-color: #000;
+    }
 }
